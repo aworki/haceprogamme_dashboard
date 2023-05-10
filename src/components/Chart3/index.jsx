@@ -31,7 +31,7 @@ function Chart1({ currentYear, currentProduct }) {
 
 
   return (
-    <div style={{ width: '800px', height: '300px', flex: 1, margin: '0 5px' }} ref={chartRef1}></div>
+    <div style={{ width: '1200px', height: '450px', margin: '0 5px' }} ref={chartRef1}></div>
   );
 }
 

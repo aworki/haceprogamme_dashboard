@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import * as echarts from 'echarts';
+import { chart2Name } from '../../common/constants';
 
 function Chart1({ currentYear, currentProduct }) {
   const chartRef1 = useRef();
@@ -13,6 +14,19 @@ function Chart1({ currentYear, currentProduct }) {
       .then(res => res.json())
       .then(json => {
         myChart.setOption({
+          grid: {
+            top: 100
+          },
+          title: {
+            text: chart2Name,
+            x: "center",
+            y: '-5',
+            textStyle: {
+              color: '#000',
+              fontSize: '22',
+              marginBottom: '10px'
+            },
+          },
           tooltip: {
             trigger: 'item',
             triggerOn: 'mousemove'
@@ -40,7 +54,7 @@ function Chart1({ currentYear, currentProduct }) {
 
 
   return (
-    <div style={{ height: '300px', flex: 1, margin: '0 5px' }} ref={chartRef1}></div>
+    <div style={{ width: '1200px', height: '450px', margin: '0 5px' }} ref={chartRef1}></div>
   );
 }
 

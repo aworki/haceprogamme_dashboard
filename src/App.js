@@ -83,13 +83,14 @@ function App() {
         setCurrentImport(_currentImport.current);
         setCurrentProduct(_currentProduct.current);
       }}>submit</Button>
-      <div style={{ display: 'flex', marginBottom: '30px', marginTop: "5px" }}>
-        {/* 图表1 柱状*/}
-        <Chart1 currentYear={currentYear} currentProduct={currentProduct} />
+      <div style={{ display: 'flex', marginBottom: '30px', marginTop: "5px", justifyContent: 'center', flexWrap: 'wrap' }}>
+
         {/* 图表4 横向柱状*/}
         <Chart4 currentImport={currentImport} currentProduct={currentProduct} />
-        {/* 图表4 扇形*/}
+        {/* 图表5 扇形*/}
         <Chart5 currentExport={currentExport} currentImport={currentImport} currentProduct={currentProduct} />
+        {/* 图表1 柱状*/}
+        <Chart1 currentYear={currentYear} currentProduct={currentProduct} />
       </div>
 
 
@@ -138,7 +139,7 @@ function App() {
         setCurrentProduct1(_currentProduct1.current);
       }}>submit</Button>
 
-      <div style={{ display: 'flex', marginTop: "5px" }}>
+      <div style={{ display: 'flex', marginTop: "5px", justifyContent: 'center', flexWrap: 'wrap' }}>
         {/* 图表2 桑基*/}
         <Chart2 currentYear={currentYear1} currentProduct={currentProduct1} />
         {/* 图表3 地图*/}

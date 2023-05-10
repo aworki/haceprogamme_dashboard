@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import * as echarts from 'echarts';
+import { chart5Name } from '../../common/constants';
 
 function Chart5({ currentExport, currentImport, currentProduct }) {
   const chartRef1 = useRef();
@@ -20,26 +21,39 @@ function Chart5({ currentExport, currentImport, currentProduct }) {
         let angle = 0;//角度，用来做简单的动画效果的
         let value = json[currentExport][currentImport];
         const option = {
-          backgroundColor: "#061740",
-          title: {
-            text: '{a|' + value + '}{c|%}',
-            x: 'center',
-            y: 'center',
-            textStyle: {
-              rich: {
-                a: {
-                  fontSize: 48,
-                  color: '#29EEF3'
-                },
+          backgroundColor: "transparent",
+          title: [
+            {
+              text: chart5Name,
+              x: "center",
+              textStyle: {
+                color: '#000',
+                fontSize: '22',
+              },
 
-                c: {
-                  fontSize: 20,
-                  color: '#ffffff',
-                  // padding: [5,0]
+            },
+            {
+              text: '{a|' + value + '}{c|%}',
+              x: 'center',
+              y: 'center',
+
+              textStyle: {
+                rich: {
+                  a: {
+                    fontSize: 48,
+                    color: '#29EEF3'
+                  },
+
+                  c: {
+                    fontSize: 20,
+                    color: '#29EEF3',
+                    // padding: [5,0]
+                  }
                 }
-              }
+              },
+
             }
-          },
+          ],
           legend: {
             type: "plain",
             orient: "vertical",

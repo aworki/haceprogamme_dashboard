@@ -1,3 +1,4 @@
+import { chart3Name } from '../../common/constants';
 import geoCoordMap from '../../data/country_coordinates.json';
 
 // const geoCoordMap = {
@@ -234,14 +235,15 @@ const processData = (data) => {
 
   // 合成option 
   const option = {
-    backgroundColor: '#404a59',
-    title: {
-      // text: '模拟迁徙',
-      // subtext: '数据纯属虚构',
-      left: 'center',
+    backgroundColor: "transparent",
+    "title": {
+      text: chart3Name,
+      x: "center",
       textStyle: {
-        color: '#fff'
-      }
+        color: '#000',
+        fontSize: '22',
+      },
+
     },
     tooltip: {
       trigger: 'item',
@@ -261,7 +263,7 @@ const processData = (data) => {
       left: 'right',
       data: ['stage_1', 'stage_2', 'stage_3', 'stage_4'],
       textStyle: {
-        color: '#fff'
+        color: '#000'
       },
       selectedMode: 'multiple',
     },

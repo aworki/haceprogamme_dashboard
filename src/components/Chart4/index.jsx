@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import * as echarts from 'echarts';
+import { chart4Name } from '../../common/constants';
 
 function Chart4({ currentImport, currentProduct }) {
   const chartRef1 = useRef();
@@ -15,7 +16,16 @@ function Chart4({ currentImport, currentProduct }) {
         console.log('json1', json[currentImport]);
         const myColor = ['#eb2100', '#eb3600', '#d0570e', '#d0a00e', '#34da62', '#00e9db', '#00c0e9', '#0096f3', '#33CCFF', '#33FFCC'];
         const option = {
-          backgroundColor: '#0e2147',
+          "title": {
+            text: chart4Name,
+            x: "center",
+            textStyle: {
+              color: '#000',
+              fontSize: '22',
+            },
+
+          },
+          backgroundColor: 'transparent',
           grid: {
             left: '11%',
             top: '12%',
@@ -32,7 +42,7 @@ function Chart4({ currentImport, currentProduct }) {
             offset: '27',
             axisLabel: {
               textStyle: {
-                color: '#ffffff',
+                color: '#000',
                 fontSize: '16',
               }
             },
